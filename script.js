@@ -10,6 +10,6 @@ function chooseOption(choice) {
   } else if (choice === "faculdade") {
     storyText.textContent =
       "Você foi para a faculdade de psicologia e conheceu pessoas incríveis que compartilham sua paixão!";
-    storyImage.src = "imagens/faculdade-campus.png"; // Nome da imagem correspondente
+    storyImage.src = "imagens/faculdade-campus.png"; // file-YNu3dNEFGQCjwxqEbVkX5q.webp
   }
 }
