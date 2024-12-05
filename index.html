@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jornada à Faculdade de Psicologia</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada da Faculdade</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game-container">
-    <h1>Jornada à Faculdade de Psicologia</h1>
-    <p id="story-text">
-      Você está diante de uma grande decisão: como será o começo da sua jornada rumo à faculdade de psicologia?
-    </p>
-    <div id="choices">
-      <button onclick="chooseOption('casa')">Ficar em casa estudando psicologia</button>
-      <button onclick="chooseOption('faculdade')">Ir para a faculdade de psicologia</button>
+    <div id="container">
+        <!-- Cenário Principal -->
+        <img id="cenario" src="imagens/imagem_inicial.webp" alt="Cenário inicial">
+
+        <!-- Botões de Escolha -->
+        <div id="opcoes">
+            <button id="escolha1"></button>
+            <button id="escolha2"></button>
+        </div>
     </div>
-    <div id="image-container">
-      <img id="story-image" src="" alt="Ilustração da escolha">
-    </div>
-  </div>
-  <script src="js/script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
-<img src="imagens/file-YNu3dNEFGQCjwxqEbVkX5q.webp" alt="Imagem de universidade">
