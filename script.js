@@ -6,7 +6,7 @@ function chooseOption(choice) {
   if (choice === "casa") {
     storyText.textContent =
       "Você decidiu ficar em casa estudando psicologia. Um caminho solitário, mas de grande aprendizado!";
-    storyImage.src = "imagens/casa-estudando.png"; // Nome da imagem correspondente
+    storyImage.src = "imagens/casa-estudando.png"; // file-B5ayBECAXx2dUzLNREWBXJ.webp
   } else if (choice === "faculdade") {
     storyText.textContent =
       "Você foi para a faculdade de psicologia e conheceu pessoas incríveis que compartilham sua paixão!";
