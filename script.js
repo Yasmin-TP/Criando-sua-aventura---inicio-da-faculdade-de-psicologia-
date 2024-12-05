@@ -1,52 +1,55 @@
-// Dados das escolhas
-const escolhas = {
-    inicio: {
-        texto1: "Você decidiu se inscrever no curso de psicologia.",
-        texto2: "Você preferiu tirar um ano sabático.",
-        proximo1: "psicologia",
-        proximo2: "sabatico"
-    },
-    psicologia: {
-        texto1: "Você começou a fazer amizades na faculdade.",
-        texto2: "Você preferiu focar apenas nos estudos.",
-        proximo1: "amizades",
-        proximo2: "foco"
-    },
-    sabatico: {
-        texto1: "Você decidiu viajar para outro país.",
-        texto2: "Você começou um estágio antes da faculdade.",
-        proximo1: "viagem",
-        proximo2: "estagio"
-    },
-    amizades: {
-        texto1: "Você foi convidado para um grupo de estudos.",
-        texto2: "Você preferiu conhecer mais pessoas.",
-        proximo1: "grupo_estudos",
-        proximo2: "conhecer_pessoas"
-    },
-    foco: {
-        texto1: "Você passou em todas as provas com excelentes notas.",
-        texto2: "Você conseguiu um estágio relacionado à psicologia.",
-        proximo1: "excelentes_notas",
-        proximo2: "estagio_psicologia"
-    },
-    // Adicione mais escolhas conforme necessário
-};
+function makeChoice(choice) {
+    const storyDiv = document.getElementById("story");
+    const choicesDiv = document.getElementById("choices");
 
-// Elementos principais
-const escolha1 = document.getElementById("escolha1");
-const escolha2 = document.getElementById("escolha2");
-
-// Função para atualizar as escolhas
-function atualizarEscolhas(cenario) {
-    const dados = escolhas[cenario];
-    escolha1.textContent = dados.texto1;
-    escolha2.textContent = dados.texto2;
-
-    // Atualizar os eventos de clique dos botões
-    escolha1.onclick = () => atualizarEscolhas(dados.proximo1);
-    escolha2.onclick = () => atualizarEscolhas(dados.proximo2);
+    if (choice === 'amizades') {
+        storyDiv.innerHTML = `
+            <p>Você decide conhecer seus colegas de classe. Logo, conhece uma garota chamada Ana que também está ansiosa pelo curso. Vocês começam a conversar e descobrem interesses em comum. O que você faz?</p>
+        `;
+        choicesDiv.innerHTML = `
+            <button onclick="makeChoice('grupoEstudo')">Sugerir formar um grupo de estudos</button>
+            <button onclick="makeChoice('cafe')">Convidar Ana para um café</button>
+        `;
+    } else if (choice === 'biblioteca') {
+        storyDiv.innerHTML = `
+            <p>Você vai para a biblioteca e encontra um livro fascinante sobre Freud. Enquanto lê, um professor passa e elogia sua escolha. Ele menciona que haverá uma palestra no próximo dia. O que você faz?</p>
+        `;
+        choicesDiv.innerHTML = `
+            <button onclick="makeChoice('palestra')">Decide ir à palestra</button>
+            <button onclick="makeChoice('voltarSala')">Voltar para a sala de aula</button>
+        `;
+    } else if (choice === 'grupoEstudo') {
+        storyDiv.innerHTML = `
+            <p>Ana adora a ideia de um grupo de estudos! Em pouco tempo, vocês recrutam outros colegas e começam a organizar encontros semanais. Você sente que já está no caminho certo para aprender muito.</p>
+        `;
+        choicesDiv.innerHTML = `<button onclick="restart()">Recomeçar</button>`;
+    } else if (choice === 'cafe') {
+        storyDiv.innerHTML = `
+            <p>Ana aceita seu convite e vocês têm uma conversa incrível durante o café. Você sente que ganhou uma amiga para toda a vida e está animado para o que vem pela frente.</p>
+        `;
+        choicesDiv.innerHTML = `<button onclick="restart()">Recomeçar</button>`;
+    } else if (choice === 'palestra') {
+        storyDiv.innerHTML = `
+            <p>A palestra é incrível! O professor compartilha experiências valiosas e dá conselhos para os iniciantes no curso. Você sai inspirado e cheio de ideias.</p>
+        `;
+        choicesDiv.innerHTML = `<button onclick="restart()">Recomeçar</button>`;
+    } else if (choice === 'voltarSala') {
+        storyDiv.innerHTML = `
+            <p>Você volta para a sala e percebe que uma atividade prática está começando. Você se envolve e já sente o entusiasmo pelo curso aumentando.</p>
+        `;
+        choicesDiv.innerHTML = `<button onclick="restart()">Recomeçar</button>`;
+    }
 }
 
-// Inicializa o jogo com o primeiro conjunto de escolhas
-atualizarEscolhas("inicio");
+function restart() {
+    const storyDiv = document.getElementById("story");
+    const choicesDiv = document.getElementById("choices");
+
+    storyDiv.innerHTML = `
+        <p>Você acaba de ser aprovado na faculdade de Psicologia! É o primeiro dia de aula. O que você faz?</p>
+    `;
+    choicesDiv.innerHTML = `
+        <button onclick="makeChoice('amizades')">Ir conhecer seus colegas</button>
+        <button onclick="makeChoice('biblioteca')">Explorar a biblioteca</button>
+    `;
+}
