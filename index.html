@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jornada da Faculdade</title>
+    <title>Início da Faculdade de Psicologia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        <!-- Cenário Principal -->
-        <img id="cenario" src="imagens/imagem_inicial.webp" alt="Cenário inicial">
-
-        <!-- Botões de Escolha -->
-        <div id="opcoes">
-            <button id="escolha1"></button>
-            <button id="escolha2"></button>
+    <div class="container">
+        <h1>Sua Jornada na Faculdade de Psicologia</h1>
+        <div id="story">
+            <p>Você acaba de ser aprovado na faculdade de Psicologia! É o primeiro dia de aula. O que você faz?</p>
+        </div>
+        <div id="choices">
+            <button onclick="makeChoice('amizades')">Ir conhecer seus colegas</button>
+            <button onclick="makeChoice('biblioteca')">Explorar a biblioteca</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
