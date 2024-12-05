@@ -1,120 +1,25 @@
-# index.py - Simulador de escolhas: Entrada na Faculdade de Psicologia
-
-def inicio():
-    print("Bem-vindo ao jogo da Jornada na Faculdade de Psicologia!")
-    print("Você está prestes a decidir o rumo de sua vida acadêmica e profissional.")
-    print("Escolha com sabedoria e boa sorte!")
-    print("\nVocê acaba de receber a notícia de que foi aprovado no curso de Psicologia em duas faculdades!")
-    print("Escolha onde irá estudar:")
-    print("1 - Uma universidade renomada na capital, com grandes oportunidades, mas distante de sua casa.")
-    print("2 - Uma faculdade próxima, menos reconhecida, mas que te permitirá ficar com sua família.")
-    escolha = input("Digite o número da sua escolha: ")
-
-    if escolha == "1":
-        capital()
-    elif escolha == "2":
-        local()
-    else:
-        print("Opção inválida! Tente novamente.")
-        inicio()
-
-def capital():
-    print("\nVocê escolheu a universidade na capital. É o início de uma jornada desafiadora!")
-    print("Agora você precisa decidir como vai se adaptar à vida na cidade grande.")
-    print("1 - Procurar um emprego de meio período para se manter.")
-    print("2 - Focar apenas nos estudos e viver com uma bolsa apertada.")
-    escolha = input("Digite o número da sua escolha: ")
-
-    if escolha == "1":
-        emprego_capital()
-    elif escolha == "2":
-        estudos_capital()
-    else:
-        print("Opção inválida! Tente novamente.")
-        capital()
-
-def local():
-    print("\nVocê escolheu a faculdade próxima de casa. É um caminho mais confortável, mas com menos prestígio.")
-    print("Agora você precisa decidir como vai se destacar no curso.")
-    print("1 - Participar de projetos de pesquisa e eventos acadêmicos.")
-    print("2 - Fazer estágios desde o início para ganhar experiência prática.")
-    escolha = input("Digite o número da sua escolha: ")
-
-    if escolha == "1":
-        pesquisa_local()
-    elif escolha == "2":
-        estagio_local()
-    else:
-        print("Opção inválida! Tente novamente.")
-        local()
-
-def emprego_capital():
-    print("\nVocê conseguiu um emprego e está conciliando trabalho e estudos.")
-    print("Porém, o cansaço está afetando seu desempenho acadêmico.")
-    print("1 - Reduzir a carga horária no trabalho e pedir ajuda financeira à família.")
-    print("2 - Continuar com o ritmo atual, mesmo com as dificuldades.")
-    escolha = input("Digite o número da sua escolha: ")
-
-    if escolha == "1":
-        print("\nVocê conseguiu melhorar seu desempenho acadêmico e completou o curso com sucesso!")
-        print("Parabéns por sua jornada!")
-    elif escolha == "2":
-        print("\nInfelizmente, o cansaço acumulado te fez abandonar o curso.")
-        print("Reflita sobre seus limites e tente novamente no futuro.")
-    else:
-        print("Opção inválida! Tente novamente.")
-        emprego_capital()
-
-def estudos_capital():
-    print("\nVocê decidiu focar nos estudos e se dedicou intensamente.")
-    print("Agora, no último ano, surgiu a oportunidade de fazer um intercâmbio.")
-    print("1 - Aceitar o intercâmbio e expandir sua visão profissional.")
-    print("2 - Recusar o intercâmbio e se concentrar no TCC.")
-    escolha = input("Digite o número da sua escolha: ")
-
-    if escolha == "1":
-        print("\nO intercâmbio foi uma experiência incrível que te abriu portas no mercado!")
-        print("Você se formou com destaque e encontrou um ótimo emprego na área.")
-    elif escolha == "2":
-        print("\nVocê concluiu o TCC com excelência e se formou.")
-        print("No entanto, sente que perdeu uma grande oportunidade de crescimento.")
-    else:
-        print("Opção inválida! Tente novamente.")
-        estudos_capital()
-
-def pesquisa_local():
-    print("\nVocê participou de muitos projetos e publicou artigos durante o curso.")
-    print("Agora, recebeu uma proposta para continuar na academia como pesquisador.")
-    print("1 - Aceitar e seguir a carreira acadêmica.")
-    print("2 - Recusar e procurar trabalho na área clínica.")
-    escolha = input("Digite o número da sua escolha: ")
-
-    if escolha == "1":
-        print("\nVocê se tornou um pesquisador respeitado e continua contribuindo para a psicologia.")
-        print("Parabéns por sua jornada!")
-    elif escolha == "2":
-        print("\nVocê encontrou dificuldades para ingressar no mercado clínico sem experiência prática.")
-        print("Talvez devesse reconsiderar sua escolha.")
-    else:
-        print("Opção inválida! Tente novamente.")
-        pesquisa_local()
-
-def estagio_local():
-    print("\nVocê começou a fazer estágios cedo e acumulou muita experiência prática.")
-    print("Agora, está pensando em abrir sua própria clínica.")
-    print("1 - Abrir a clínica e arriscar-se como empreendedor.")
-    print("2 - Continuar trabalhando como funcionário em uma clínica estabelecida.")
-    escolha = input("Digite o número da sua escolha: ")
-
-    if escolha == "1":
-        print("\nVocê abriu a clínica e, apesar de muitos desafios, alcançou grande sucesso!")
-        print("Parabéns por sua jornada!")
-    elif escolha == "2":
-        print("\nVocê continuou trabalhando para outros profissionais e teve uma carreira estável, mas sente falta de independência.")
-    else:
-        print("Opção inválida! Tente novamente.")
-        estagio_local()
-
-# Início do jogo
-if __name__ == "__main__":
-    inicio()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornada à Faculdade de Psicologia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container">
+    <h1>Jornada à Faculdade de Psicologia</h1>
+    <p id="story-text">
+      Você está diante de uma grande decisão: como será o começo da sua jornada rumo à faculdade de psicologia?
+    </p>
+    <div id="choices">
+      <button onclick="chooseOption('casa')">Ficar em casa estudando psicologia</button>
+      <button onclick="chooseOption('faculdade')">Ir para a faculdade de psicologia</button>
+    </div>
+    <div id="image-container">
+      <img id="story-image" src="" alt="Ilustração da escolha">
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
